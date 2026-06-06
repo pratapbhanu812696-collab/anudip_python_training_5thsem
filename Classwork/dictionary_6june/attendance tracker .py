@@ -12,9 +12,10 @@ for i in range(30):
 
     attendance[roll_no] = status
 
-# Display present students
-print("\nStudents Present:")
 
-for roll_no, status in attendance.items():
-    if status.lower() == "present":
-        print(roll_no)
+# Display roll numbers of present students
+print("\nPresent Students:")
+
+for roll in attendance:
+    if attendance[roll] == "P":
+        print(roll)
