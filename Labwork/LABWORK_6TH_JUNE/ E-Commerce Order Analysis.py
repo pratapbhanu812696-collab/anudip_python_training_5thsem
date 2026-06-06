@@ -1,4 +1,4 @@
-# Initial data
+# List of products and their prices
 orders = [
     ("Laptop", 55000),
     ("Mouse", 800),
@@ -7,38 +7,34 @@ orders = [
     ("Pen Drive", 600)
 ]
 
-# Variables to keep track of our totals and counts
-total_value = 0
-below_1000_count = 0
+# Part 1: Display products costing more than 1000
+print("Products costing more than ₹1000:")
+for product in orders:
+    if product[1] > 1000:
+        print(product[0])
 
-# Variables to track the most expensive product
-most_expensive_product = ""
-highest_price = 0
+# Part 2: Find the most expensive product
+max_product = orders[0]
 
-print("--- Products costing more than ₹1000 ---")
+for product in orders:
+    if product[1] > max_product[1]:
+        max_product = product
 
-# Go through each order one by one
-for product, price in orders:
-    
-    # 1. Check and display if the product costs more than ₹1000
-    if price > 1000:
-        print("-", product)
-        
-    # 2. Check if this is the most expensive product we've seen so far
-    if price > highest_price:
-        highest_price = price
-        most_expensive_product = product
-        
-    # 3. Add the current product's price to the total order value
-    total_value = total_value + price
-    
-    # 4. Check if the product costs below ₹1000 to increase our count
-    if price < 1000:
-        below_1000_count = below_1000_count + 1
+print("\nMost Expensive Product:", max_product[0], "-", max_product[1])
 
-print("---------------------------------------")
+# Part 3: Calculate total order value
+total = 0
 
-# Print the final results
-print("Most expensive product:", most_expensive_product)
-print("Total order value: ₹", total_value)
-print("Number of products below ₹1000:", below_1000_count)
+for product in orders:
+    total += product[1]
+
+print("Total Order Value =", total)
+
+# Part 4: Count products costing below 1000
+count = 0
+
+for product in orders:
+    if product[1] < 1000:
+        count += 1
+
+print("Products below ₹1000 =", count)
