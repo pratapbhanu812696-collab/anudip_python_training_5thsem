@@ -1,67 +1,39 @@
-# Sample Data
+#Employee Performance Evaluation using tuples
+# Define a tuple to store employee performance data
 employees = (
-    ("E101", "Anuj", 92),
-    ("E102", "Rahul", 76),
-    ("E103", "Priya", 58),
-    ("E104", "Neha", 88),
-    ("E105", "Amit", 45)
+("E101", "Anuj", 92),
+("E102", "Rahul", 76),
+("E103", "Priya", 58),
+("E104", "Neha", 88),
+("E105", "Amit", 45)
 )
-
-# Variables to store results for Tasks 2, 3, 4, and 5
-needs_improvement_count = 0
-highest_score = -1
-highest_performer = None
-high_performers_list = []
-categories_output = []
-
-print("Employees Scoring 80 or Above:")
-# Loop through the data to process all tasks
-for emp_id, name, score in employees:
-    
-    # Task 1: Display details of employees scoring 80 or above
-    if score >= 80:
-        print(f"{emp_id} {name} {score}")
-        
-    # Task 2: Count employees needing improvement (score below 60)
-    if score < 60:
-        needs_improvement_count += 1
-        
-    # Task 3: Find the employee with the highest score
-    if score > highest_score:
-        highest_score = score
-        highest_performer = (emp_id, name, score)
-        
-    # Task 4: Create a list of names scoring above 75
-    if score > 75:
-        high_performers_list.append(name)
-        
-    # Task 5: Determine performance category
-    if score >= 90:
+#Display details of employees scoring 80 or above.
+for emp in employees:
+    if emp[2] >= 80:
+        print(f"Employee ID: {emp[0]}, Name: {emp[1]}, Score: {emp[2]}")
+#Count the number of employees who need improvement (score below 60)
+improvement_count = sum(1 for emp in employees if emp[2] < 60)
+print(f"Number of employees needing improvement: {improvement_count}")
+#Find the employee with the highest score
+highest_score_employee = max(employees, key=lambda emp: emp[2])
+print(f"Employee with the highest score: {highest_score_employee[1]} (Score: {highest_score_employee[2]})")
+#Create a list containing the names of all employees scoring above 75.
+high_scorers = [emp[1] for emp in employees if emp[2] > 75]
+print("Employees scoring above 75:", high_scorers)
+#Display the performance category for each employee:
+#90 and above → Excellent
+# 75 to 89 → Good
+# 60 to 74 → Average
+# Below 60 → Needs Improvement
+for emp in employees:
+    if emp[2] >= 90:
         category = "Excellent"
-    elif score >= 75:
+    elif emp[2] >= 75:
         category = "Good"
-    elif score >= 60:
+    elif emp[2] >= 60:
         category = "Average"
     else:
         category = "Needs Improvement"
+    print(f"Employee ID: {emp[0]}, Name: {emp[1]}, Score: {emp[2]}, Performance Category: {category}")
     
-    categories_output.append(f"{name} -> {category}")
 
-print("-" * 30) # Separator for neatness
-
-# Task 2 Output
-print(f"Employees Needing Improvement: {needs_improvement_count}")
-
-# Task 3 Output
-print("Highest Performer:")
-if highest_performer:
-    print(f"{highest_performer[0]} {highest_performer[1]} {highest_performer[2]}")
-
-# Task 4 Output
-print("High Performers:")
-print(high_performers_list)
-
-# Task 5 Output
-print("Performance Categories:")
-for record in categories_output:
-    print(record)
