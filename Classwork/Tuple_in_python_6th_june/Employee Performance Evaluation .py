@@ -7,20 +7,28 @@ employees = (
 ("E104", "Neha", 88),
 ("E105", "Amit", 45)
 )
-#Display details of employees scoring 80 or above.
+#1.Display details of employees scoring 80 or above.
 for emp in employees:
     if emp[2] >= 80:
         print(f"Employee ID: {emp[0]}, Name: {emp[1]}, Score: {emp[2]}")
-#Count the number of employees who need improvement (score below 60)
+
+
+#2.Count the number of employees who need improvement (score below 60)
 improvement_count = sum(1 for emp in employees if emp[2] < 60)
 print(f"Number of employees needing improvement: {improvement_count}")
-#Find the employee with the highest score
+
+
+#3.Find the employee with the highest score
 highest_score_employee = max(employees, key=lambda emp: emp[2])
 print(f"Employee with the highest score: {highest_score_employee[1]} (Score: {highest_score_employee[2]})")
-#Create a list containing the names of all employees scoring above 75.
+
+
+#4.Create a list containing the names of all employees scoring above 75.
 high_scorers = [emp[1] for emp in employees if emp[2] > 75]
 print("Employees scoring above 75:", high_scorers)
-#Display the performance category for each employee:
+
+
+#5.Display the performance category for each employee:
 #90 and above → Excellent
 # 75 to 89 → Good
 # 60 to 74 → Average
