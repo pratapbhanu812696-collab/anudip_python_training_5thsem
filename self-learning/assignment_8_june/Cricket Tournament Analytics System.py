@@ -1,3 +1,35 @@
+#Problem Statement
+Store statistics of at least 30 cricket players.
+Example Structure
+players = {
+"Virat": {
+"runs": 645,
+"matches": 12,
+"wickets": 0
+}
+}
+Requirements
+1. Display all player statistics.
+2. Find highest run scorer.
+3. Find lowest run scorer.
+4. Calculate average runs.
+5. Find player with maximum wickets.
+6. Find all-rounders (runs > 300 and wickets > 5).
+7. Display players scoring above average.
+8. Create categories:
+o Star Performer
+o Good Performer
+o Average Performer
+o Poor Performer
+9. Generate team statistics.
+10. Display top 5 batsmen.
+11. Display top 5 bowlers.
+12. Create a separate dictionary for award winners.
+Challenge
+Generate a tournament report.
+
+
+    
 # 1. Database containing exactly 30 players
 players = {
     "Virat": {"runs": 645, "matches": 12, "wickets": 0},
