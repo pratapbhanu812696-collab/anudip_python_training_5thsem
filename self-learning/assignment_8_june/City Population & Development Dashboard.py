@@ -1,3 +1,46 @@
+#Problem Statement
+The government wants to analyze city data.
+Store details of at least 30 cities.
+Example Structure
+cities = {
+"Delhi": {
+"population": 32000000,
+"area": 1484,
+"literacy": 89
+}
+}
+Requirements
+1. Display all city details.
+2. Find the most populated city.
+3. Find the least populated city.
+4. Calculate average population.
+5. Display cities with literacy rate above 90%.
+6. Display cities with literacy below average.
+7. Calculate population density.
+8. Find city with highest density.
+9. Categorize cities:
+o Small
+o Medium
+o Large
+10. Create a development-priority list.
+11. Generate separate dictionaries for:
+o High Literacy Cities
+o Low Literacy Cities
+12. Generate a national summary report.
+Challenge
+Rank all cities based on population density.
+Assignment Rule (Important)
+For all 5 Questions:
+• Use at least 30 records.
+• Do not use built-in sorting functions (sorted(), sort()).
+• Use loops and conditions to find maximum, minimum, rankings, and reports.
+• Display results in a structured format.
+• Add a menu-driven interface using while loop.
+
+
+
+
+
 # 1. Database containing exactly 30 cities
 cities = {
     "Delhi": {"population": 32000000, "area": 1484, "literacy": 89},
